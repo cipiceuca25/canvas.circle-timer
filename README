@@ -1,0 +1,10 @@
+Simple timer.
+Usage:
+
+var myTime = new Timer("cnv", 20000, 50, function() { alert('timeout!') }, "blue", "pink");
+
+myTime.start();
+myTime.stop();
+myTime.setTimeLeft(10000); // milliseconds
+
+
