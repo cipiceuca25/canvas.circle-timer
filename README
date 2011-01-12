@@ -1,8 +1,8 @@
 Simple timer.
 Usage:
 
-var myTime = new Timer("cnv", 20000, 50, function() { alert('timeout!') }, "blue", "pink");
-
+var myTime = new Timer("test", 20000, 50, function() { alert('timeout!') }, "blue", "pink"); // full constructor: canvasId, time, refreshRate, callback, strokeColor, fillColor
+var myTime = new Timer("test", 20000, 50); // callback is optional, colors default to #fff and #ff0000
 myTime.start();
 myTime.stop();
 myTime.setTimeLeft(10000); // milliseconds
