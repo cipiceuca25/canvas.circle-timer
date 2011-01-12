@@ -72,7 +72,6 @@ var Timer = function(canvasId, timeMax, refreshRate, timeoutCallback, strokeColo
 	var init = (function() {
 		redrawInitials();
 		timerObj.setTimeLeft(timeMax);
-		console.log("created timer " + canvasId);
 	})()
 
 	return timerObj;
