@@ -6,14 +6,14 @@ var Timer = function(canvasId, timeMax, refreshRate, timeoutCallback, strokeColo
 		timeMax = timeMax,
 		timeLeft = timeMax,
 		refreshRate = refreshRate,
-		middleX = cwidth/2,
-		middleY = cheight/2,
-		maxRadius = cwidth/2,
+		middleX = cwidth / 2,
+		middleY = cheight / 2,
+		maxRadius = cwidth / 2,
 		strokeColor = strokeColor || "#000",
 		fillColor = fillColor || "red",
-		radianStart = Math.PI-0.5,
-		radianMax = Math.PI*2,
-		arcNorth = Math.PI*-0.5,
+		radianStart = Math.PI - 0.5,
+		radianMax = Math.PI * 2,
+		arcNorth = Math.PI * -0.5,
 		stepTimer = null;
 
 	var redrawInitials = function() {
@@ -36,15 +36,15 @@ var Timer = function(canvasId, timeMax, refreshRate, timeoutCallback, strokeColo
 		timerObj.setTimeLeft(newTimeLeft) && drawTimestep();
 		if (newTimeLeft < 0) {
 			timerObj.stop();
-            if (timeoutCallback) {
-                timeoutCallback.call(null, newTimeLeft);
-            }
+			if (timeoutCallback) {
+				timeoutCallback.call(null, newTimeLeft);
+			}
 		}
 	}
 
 	var drawTimestep = function() {
 		var timeUsedPercent = (timeMax - timeLeft) / timeMax;
-		var rmax = radianMax*timeUsedPercent;
+		var rmax = radianMax * timeUsedPercent;
 		ctx.beginPath();
 		ctx.moveTo(middleX, middleY);
 		ctx.arc(middleX, middleY, maxRadius, arcNorth, arcNorth + rmax, false);
@@ -72,7 +72,7 @@ var Timer = function(canvasId, timeMax, refreshRate, timeoutCallback, strokeColo
 	var init = (function() {
 		redrawInitials();
 		timerObj.setTimeLeft(timeMax);
-        console.log("created timer " + canvasId);
+		console.log("created timer " + canvasId);
 	})()
 
 	return timerObj;
