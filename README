@@ -7,4 +7,5 @@ myTime.start();
 myTime.stop();
 myTime.setTimeLeft(10000); // milliseconds
 
-
+Demo:
+http://dev.wildcard.pl/timer/example.html
